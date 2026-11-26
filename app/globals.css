@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 150 8% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 8% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 8% 15%;
+    --primary: 157 65% 22%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 44 44% 90%;
+    --secondary-foreground: 150 12% 20%;
+    --muted: 44 33% 93%;
+    --muted-foreground: 150 6% 40%;
+    --accent: 44 44% 90%;
+    --accent-foreground: 150 12% 20%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 87%;
+    --input: 40 20% 87%;
+    --ring: 157 65% 22%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-charcoal antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-forest-700 text-white hover:bg-forest-600 shadow-sm hover:shadow-md px-6 py-3;
+  }
+  .btn-gold {
+    @apply btn bg-gold-400 text-charcoal hover:bg-gold-300 shadow-sm hover:shadow-md px-6 py-3;
+  }
+  .btn-outline {
+    @apply btn border border-forest-700/30 text-forest-700 hover:bg-forest-50 hover:border-forest-700/60 px-6 py-3 bg-white/60;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/40 text-white hover:bg-white/10 px-6 py-3;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-input bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-forest-600/40 focus:border-forest-600 transition;
+  }
+  .card-surface {
+    @apply bg-white rounded-2xl border border-border/70 shadow-sm;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-forest-600;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply block h-px w-8 bg-gold-400;
+  }
+}
+
+/* Reveal-on-scroll animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Decorative background patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(20, 92, 67, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(200, 164, 93, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 164, 93, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
