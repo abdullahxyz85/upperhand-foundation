@@ -124,7 +124,7 @@ export default async function ProgramDetailPage({
               <Heart className="h-8 w-8 text-gold-300" />
               <h3 className="mt-4 font-serif text-2xl font-semibold">Support This Program</h3>
               <p className="mt-3 text-sm leading-relaxed text-white/70">
-                Direct your donation to {program.title} — choose this cause in the donation form and
+                Direct your donation to {program.title}. Choose this cause in the donation form and
                 your gift will be allocated to it.
               </p>
               <Link href="/donate" className="btn-gold mt-6 w-full group">

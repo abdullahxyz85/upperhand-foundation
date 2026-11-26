@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
               <li>To process, receipt and follow up on donations.</li>
               <li>To assess volunteer applications and contact you about opportunities.</li>
               <li>To respond to inquiries and partnership proposals.</li>
-              <li>To send newsletters and updates — only if you subscribed, with an unsubscribe option in every message.</li>
+              <li>To send newsletters and updates only if you subscribed, with an unsubscribe option in every message.</li>
               <li>To meet legal, audit and accounting obligations.</li>
             </ul>
           </Reveal>

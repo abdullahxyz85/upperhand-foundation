@@ -9,7 +9,7 @@ import { contactPlaceholders } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with Upper Hands Foundation — questions about donations, volunteering, partnerships or our programs.',
+    'Get in touch with Upper Hands Foundation for questions about donations, volunteering, partnerships or our programs.',
 };
 
 export default function ContactPage() {
@@ -25,7 +25,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="We'd Love to Hear From You"
-        description="Whether you want to give, volunteer, partner or simply ask a question — every message reaches a real person on our team."
+        description="Whether you want to give, volunteer, partner or simply ask a question, every message reaches a real person on our team."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Contact Us' }]}
       />
 

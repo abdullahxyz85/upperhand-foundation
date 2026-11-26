@@ -7,7 +7,7 @@ import { InfoCard } from '@/components/page-parts';
 export const metadata: Metadata = {
   title: 'Mission & Vision',
   description:
-    'The mission and vision of Upper Hands Foundation — relieving suffering with dignity and building self-reliant communities across Pakistan.',
+    'The mission and vision of Upper Hands Foundation: relieving suffering with dignity and building self-reliant communities across Pakistan.',
 };
 
 export default function MissionVisionPage() {
@@ -28,7 +28,7 @@ export default function MissionVisionPage() {
               <h2 className="mt-5 font-serif text-3xl font-semibold">Our Mission</h2>
               <p className="mt-4 leading-relaxed text-white/75">
                 To relieve immediate suffering with dignity and speed, and to invest in the education,
-                health and self-reliance of underserved communities across Pakistan — so that help given
+                health and self-reliance of underserved communities across Pakistan, so that help given
                 today becomes strength that lasts.
               </p>
               <ul className="mt-8 space-y-3 text-sm text-white/70">
@@ -52,7 +52,7 @@ export default function MissionVisionPage() {
               <h2 className="mt-5 font-serif text-3xl font-semibold text-charcoal">Our Vision</h2>
               <p className="mt-4 leading-relaxed text-charcoal/70">
                 A Pakistan where no family sleeps hungry, no child is denied learning, no patient is
-                refused care for lack of means — and where compassion is organized, accountable, and
+                refused care for lack of means, and where compassion is organized, accountable, and
                 within everyone's reach.
               </p>
               <ul className="mt-8 space-y-3 text-sm text-charcoal/70">

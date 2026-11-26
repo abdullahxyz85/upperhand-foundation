@@ -16,7 +16,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Together, We Can Make a Difference`,
+    default: `${siteConfig.name} | Together, We Can Make a Difference`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Together, We Can Make a Difference`,
+    title: `${siteConfig.name} | Together, We Can Make a Difference`,
     description: siteConfig.description,
   },
   twitter: {

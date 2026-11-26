@@ -252,7 +252,7 @@ export function DonationForm({ dark = false }: { dark?: boolean }) {
         {loading ? 'Recording…' : `Donate PKR ${finalAmount ? finalAmount.toLocaleString() : '0'} Securely`}
       </button>
       <p className="mt-3 text-center text-xs leading-relaxed text-charcoal/55">
-        Online payments open soon — your pledge is recorded now and our team will contact you with verified
+        Online payments open soon. Your pledge is recorded now and our team will contact you with verified
         payment options (bank transfer, JazzCash, Easypaisa, or card).
       </p>
       <p className="mt-2 text-center text-xs text-charcoal/45">

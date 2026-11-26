@@ -7,7 +7,7 @@ import { Reveal } from '@/components/reveal';
 export const metadata: Metadata = {
   title: 'Get Involved',
   description:
-    'Volunteer, partner or donate — every way to support Upper Hands Foundation and the communities we serve across Pakistan.',
+    'Volunteer, partner or donate. Every action supports Upper Hands Foundation and the communities we serve across Pakistan.',
 };
 
 export default function GetInvolvedPage() {
@@ -15,7 +15,7 @@ export default function GetInvolvedPage() {
     {
       icon: Users,
       title: 'Become a Volunteer',
-      text: 'Give your time and skills — field teams, teaching, medical support, logistics or outreach. Every pair of hands counts.',
+      text: 'Give your time and skills in field teams, teaching, medical support, logistics or outreach. Every pair of hands counts.',
       href: '/get-involved/volunteer',
       cta: 'Apply to Volunteer',
     },
@@ -29,7 +29,7 @@ export default function GetInvolvedPage() {
     {
       icon: Heart,
       title: 'Support Our Mission',
-      text: 'Give once or monthly, and choose the cause closest to your heart — from food assistance to Zakat.',
+      text: 'Give once or monthly, and choose the cause closest to your heart, from food assistance to Zakat.',
       href: '/donate',
       cta: 'Donate Now',
     },

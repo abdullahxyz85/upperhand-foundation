@@ -8,7 +8,7 @@ import { VolunteerForm } from '@/components/involvement-forms';
 export const metadata: Metadata = {
   title: 'Become a Volunteer',
   description:
-    'Volunteer with Upper Hands Foundation — give your time and skills to food drives, education support, medical camps and community welfare across Pakistan.',
+    'Volunteer with Upper Hands Foundation. Give your time and skills to food drives, education support, medical camps and community welfare across Pakistan.',
 };
 
 export default function VolunteerPage() {

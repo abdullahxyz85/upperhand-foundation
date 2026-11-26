@@ -37,7 +37,7 @@ export default async function NewsPage() {
       <PageHero
         eyebrow="Media & Stories"
         title="News & Updates"
-        description="Field reports, campaign updates and announcements — the view from the ground, in plain words."
+        description="Field reports, campaign updates and announcements, shared in plain words from the ground."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'News & Updates' }]}
       />
 
@@ -76,7 +76,7 @@ export default async function NewsPage() {
               </p>
               <div className="mt-8 text-left">
                 <PlaceholderNotice>
-                  Articles are written and published by foundation administrators — nothing is auto-generated.
+                  Articles are written and published by foundation administrators. Nothing is auto-generated.
                 </PlaceholderNotice>
               </div>
             </div>

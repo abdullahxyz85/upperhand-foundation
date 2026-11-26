@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Gallery',
   description:
-    'Photos from the field — the people and moments of Upper Hands Foundation\'s humanitarian work across Pakistan.',
+    'Photos from the field, featuring the people and moments of Upper Hands Foundation\'s humanitarian work across Pakistan.',
 };
 
 type Image = { id: string; title: string; image_url: string; category: string };
@@ -36,7 +36,7 @@ export default async function GalleryPage() {
       <PageHero
         eyebrow="Media & Stories"
         title="Gallery"
-        description="Moments from our work — photographed with respect, published with permission."
+        description="Moments from our work, photographed with respect and published with permission."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Gallery' }]}
       />
 
@@ -80,7 +80,7 @@ export default async function GalleryPage() {
               </span>
               <h2 className="mt-6 text-2xl font-semibold text-forest-800">Gallery Coming Soon</h2>
               <p className="mt-3 text-sm leading-relaxed text-charcoal/65">
-                Photographs will be published here as the foundation's activities begin — always with the
+                Photographs will be published here as the foundation's activities begin, always with the
                 consent and dignity of the people pictured.
               </p>
               <div className="mt-8 text-left">

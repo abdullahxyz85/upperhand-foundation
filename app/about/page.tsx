@@ -8,7 +8,7 @@ import { InfoCard, PlaceholderNotice } from '@/components/page-parts';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Upper Hands Foundation — a humanitarian welfare organization based in Pakistan working to bring hope and dignity to communities in need.',
+    'Learn about Upper Hands Foundation, a humanitarian welfare organization based in Pakistan working to bring hope and dignity to communities in need.',
 };
 
 export default function AboutPage() {
@@ -32,12 +32,12 @@ export default function AboutPage() {
               <div className="mt-5 space-y-4 leading-relaxed text-charcoal/70">
                 <p>
                   The name comes from a simple image: when someone is struggling, their hand reaches up.
-                  Our work begins the moment another hand reaches down to hold it. Two hands joined — one
-                  in need, one willing — are the foundation of everything we do.
+                  Our work begins the moment another hand reaches down to hold it. Two hands joined, one
+                  in need and one willing, are the foundation of everything we do.
                 </p>
                 <p>
                   Upper Hands Foundation is a welfare organization based in Pakistan, established to serve
-                  people affected by poverty, displacement, illness and disaster — regardless of their
+                  people affected by poverty, displacement, illness and disaster, regardless of their
                   background, community or creed.
                 </p>
                 <p>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 <h3 className="mt-4 font-serif text-2xl font-semibold">Mission Statement</h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/70">
                   To relieve immediate suffering with dignity and speed, and to invest in the education,
-                  health and self-reliance of underserved communities across Pakistan — so that help given
+                  health and self-reliance of underserved communities across Pakistan, so that help given
                   today becomes strength that lasts.
                 </p>
               </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 <h3 className="mt-4 font-serif text-2xl font-semibold text-charcoal">Vision Statement</h3>
                 <p className="mt-3 text-sm leading-relaxed text-charcoal/70">
                   A Pakistan where no family sleeps hungry, no child is denied learning, no patient is
-                  refused care for lack of means — and where compassion is organized, accountable, and
+                  refused care for lack of means, and where compassion is organized, accountable, and
                   within everyone's reach.
                 </p>
               </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             {[
               { icon: HandHeart, title: 'Compassion First', text: 'Every decision starts with empathy for the person in front of us.' },
               { icon: ShieldCheck, title: 'Radical Transparency', text: 'Donors deserve to know where every rupee goes. We publish, document and audit.' },
-              { icon: Users, title: 'Dignity in Service', text: 'We serve people as equals — never as cases. Assistance preserves pride.' },
+              { icon: Users, title: 'Dignity in Service', text: 'We serve people as equals, never as cases. Assistance preserves pride.' },
               { icon: Compass, title: 'Lasting Impact', text: 'We favor programs that create self-reliance over one-time handouts.' },
             ].map((v, i) => (
               <Reveal key={v.title} delay={i * 80}>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {[
               { step: '01', title: 'Identify', text: 'Local teams assess needs through community visits and verified referrals.' },
-              { step: '02', title: 'Plan', text: 'Assistance is designed with the community — scope, budget and timeline.' },
+              { step: '02', title: 'Plan', text: 'Assistance is designed with the community, including its scope, budget and timeline.' },
               { step: '03', title: 'Deliver', text: 'Distribution happens in the open, with documentation at each step.' },
               { step: '04', title: 'Report', text: 'Results and finances are published for every supporter to see.' },
             ].map((s, i) => (

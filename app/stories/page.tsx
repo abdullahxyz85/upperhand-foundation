@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Success Stories',
   description:
-    'Stories of change from Upper Hands Foundation — real people and communities supported with dignity across Pakistan.',
+    'Stories of change from Upper Hands Foundation, featuring people and communities supported with dignity across Pakistan.',
 };
 
 type Story = { id: string; slug: string; title: string; excerpt: string; location: string; created_at: string };
@@ -37,7 +37,7 @@ export default async function StoriesPage() {
       <PageHero
         eyebrow="Stories of Change"
         title="Real People. Real Hope."
-        description="Every story here is shared with the permission of the person it belongs to. We change no names to protect no one — dignity includes being heard."
+        description="Every story here is shared with the permission of the person it belongs to. We change no names to protect no one. Dignity includes being heard."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Success Stories' }]}
       />
 

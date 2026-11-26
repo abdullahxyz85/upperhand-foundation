@@ -10,16 +10,16 @@ export const siteConfig = {
 };
 
 /**
- * EDITABLE PLACEHOLDERS — replace with the foundation's official details.
+ * EDITABLE PLACEHOLDERS: replace with the foundation's official details.
  * These values are intentionally placeholder text, not real contact information.
  */
 export const contactPlaceholders = {
-  address: 'Address to be announced — Upper Hands Foundation, Pakistan',
+  address: 'Address to be announced, Upper Hands Foundation, Pakistan',
   phone: '+92 XXX XXXXXXX',
   phoneHref: '',
   whatsapp: '',
   email: 'info@upperhandsfoundation.com',
-  officeHours: 'Monday – Saturday, 9:00 AM – 5:00 PM (PKT)',
+  officeHours: 'Monday to Saturday, 9:00 AM to 5:00 PM (PKT)',
 };
 
 export const bankPlaceholders = {

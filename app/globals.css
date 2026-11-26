@@ -38,7 +38,7 @@
     @apply bg-cream text-charcoal antialiased;
   }
   h1, h2, h3, h4 {
-    @apply font-serif;
+    @apply font-sans;
     line-height: 1.2;
   }
 }
@@ -80,10 +80,6 @@
   .eyebrow {
     @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-forest-600;
   }
-  .eyebrow::before {
-    content: '';
-    @apply block h-px w-8 bg-gold-400;
-  }
 }
 
 /* Reveal-on-scroll animation */
@@ -114,4 +110,31 @@
     linear-gradient(rgba(200, 164, 93, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(200, 164, 93, 0.06) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+
+.newsletter-feature-card {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(220, 237, 228, 0.76), rgba(247, 238, 219, 0.68)) padding-box,
+    linear-gradient(120deg, #145c43, #c8a45d, #5fa288, #145c43) border-box;
+  background-size: 100% 100%, 300% 300%;
+  animation: newsletter-border-shift 8s ease-in-out infinite;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px -32px rgba(14, 58, 44, 0.6);
+}
+
+@keyframes newsletter-border-shift {
+  0%, 100% {
+    background-position: 0 0, 0% 50%;
+  }
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-feature-card {
+    animation: none;
+    background-position: 0 0, 50% 50%;
+  }
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   Award,
@@ -12,9 +13,8 @@ import {
   Target,
   Users,
 } from 'lucide-react';
-import { DonationForm } from '@/components/donation-form';
 import { NewsletterForm } from '@/components/newsletter-form';
-import { ProgramCard, programIcons } from '@/components/program-card';
+import { ProgramCard, programImages } from '@/components/program-card';
 import { AnimatedCounter } from '@/components/animated-counter';
 import { Reveal } from '@/components/reveal';
 import { SectionHeading, CtaBanner } from '@/components/sections';
@@ -50,9 +50,20 @@ async function getHomeData() {
 const values = [
   { icon: HandHeart, title: 'Compassion', text: 'We lead with empathy, treating every person we serve with dignity and respect.' },
   { icon: ShieldCheck, title: 'Integrity', text: 'We hold ourselves to the highest standards of honesty and accountability.' },
-  { icon: Sparkles, title: 'Impact', text: 'We focus on meaningful, lasting change — not one-off gestures.' },
+  { icon: Sparkles, title: 'Impact', text: 'We focus on meaningful, lasting change, not one-off gestures.' },
   { icon: Handshake, title: 'Community', text: 'We work hand in hand with the communities we serve, never apart from them.' },
 ];
+
+const programPhotoFallbacks = [
+  { title: 'Education & Learning', icon: 'book-open' },
+  { title: 'Healthcare & Medical Assistance', icon: 'stethoscope' },
+  { title: 'Food Distribution', icon: 'utensils' },
+  { title: 'Community Welfare', icon: 'users' },
+  { title: 'Orphan & Child Support', icon: 'baby' },
+  { title: 'Emergency & Disaster Relief', icon: 'life-buoy' },
+  { title: 'Clean Water & Basic Necessities', icon: 'droplets' },
+  { title: 'Social Development', icon: 'trending-up' },
+] as const;
 
 export default async function HomePage() {
   const { programs, projects, stats, stories, posts, docs } = await getHomeData();
@@ -60,22 +71,27 @@ export default async function HomePage() {
   return (
     <>
       {/* ============ A. HERO ============ */}
-      <section className="relative overflow-hidden bg-forest-900 text-white">
-        <div className="absolute inset-0 pattern-dots opacity-30" aria-hidden />
-        <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-forest-600/25 blur-3xl" aria-hidden />
-        <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-gold-400/10 blur-3xl" aria-hidden />
-        <div className="absolute right-8 top-16 hidden h-40 w-40 rotate-12 rounded-3xl border border-gold-400/20 lg:block" aria-hidden />
-        <div className="absolute right-24 bottom-20 hidden h-24 w-24 -rotate-6 rounded-2xl border border-white/10 lg:block" aria-hidden />
-        <div className="container-wide relative grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2 lg:py-28">
+      <section className="relative isolate overflow-hidden bg-neutral-950 text-white">
+        <Image
+          src="/images/community-outreach.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/35" aria-hidden />
+        <div className="container-wide relative grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:py-16">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-4 py-1.5 text-xs font-medium tracking-wide text-gold-300">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-1.5 text-xs font-medium tracking-wide text-white">
                 <Sparkles className="h-3.5 w-3.5" />
-                Upper Hands Foundation — Pakistan
+                Upper Hands Foundation | Pakistan
               </span>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="mt-6 text-4xl font-semibold leading-[1.12] text-balance sm:text-5xl lg:text-6xl">
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.08] text-balance sm:text-5xl lg:text-6xl">
                 Together, We Can Make a{' '}
                 <span className="relative whitespace-nowrap text-gold-300">
                   Difference
@@ -87,13 +103,13 @@ export default async function HomePage() {
               </h1>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
                 At Upper Hands Foundation, we believe every individual deserves dignity, opportunity, and a
                 better tomorrow. Together, we can bring hope, support communities, and transform lives.
               </p>
             </Reveal>
             <Reveal delay={300}>
-              <div className="mt-9 flex flex-wrap gap-4">
+              <div className="mt-7 flex flex-wrap gap-4">
                 <Link href="/donate" className="btn-gold group">
                   <Heart className="h-4 w-4" />
                   Donate Now
@@ -105,7 +121,7 @@ export default async function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={400}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/60">
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/75">
                 <span className="flex items-center gap-2">
                   <ShieldCheck className="h-4 w-4 text-gold-300" /> Transparent & accountable
                 </span>
@@ -119,16 +135,41 @@ export default async function HomePage() {
             </Reveal>
           </div>
 
-          <div className="relative">
+          <div className="relative mx-auto w-full max-w-xl">
             <Reveal delay={200}>
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-forest-800 shadow-2xl">
-                <div className="flex items-center gap-1.5 border-b border-white/10 px-5 py-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-                </div>
-                <div className="p-6 sm:p-8">
-                  <DonationForm dark />
+              <div className="relative h-[300px] sm:h-[360px] lg:h-[420px]">
+                <figure className="absolute right-0 top-0 h-[78%] w-[82%] overflow-hidden rounded-[2rem] border border-white/20 shadow-2xl">
+                  <Image
+                    src="/images/hero-volunteer.jpg"
+                    alt="A volunteer preparing food aid packages for distribution"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 82vw, 36vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" aria-hidden />
+                  <figcaption className="absolute inset-x-5 bottom-5 text-sm font-medium text-white sm:text-base">
+                    Every act of kindness matters
+                  </figcaption>
+                </figure>
+                <figure className="absolute bottom-0 left-0 h-[48%] w-[48%] overflow-hidden rounded-3xl border-4 border-white/90 shadow-xl">
+                  <Image
+                    src="/images/child-learning.jpg"
+                    alt="A teacher leading a learning activity with young children"
+                    fill
+                    sizes="(max-width: 1024px) 48vw, 20vw"
+                    className="object-cover"
+                  />
+                </figure>
+                <div className="absolute left-0 top-5 flex items-center gap-3 rounded-2xl border border-white/20 bg-black/50 p-4 shadow-lg backdrop-blur-md sm:top-8">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 text-forest-900">
+                    <HandHeart className="h-5 w-5" />
+                  </span>
+                  <span className="text-sm font-semibold leading-snug text-white">
+                    Hope, dignity,
+                    <br />
+                    opportunity
+                  </span>
                 </div>
               </div>
             </Reveal>
@@ -142,9 +183,16 @@ export default async function HomePage() {
           <Reveal>
             <div className="relative">
               <div className="absolute -left-4 -top-4 h-full w-full rounded-3xl border-2 border-gold-400/40" aria-hidden />
-              <div className="relative overflow-hidden rounded-3xl bg-forest-800 p-8 sm:p-10">
-                <div className="pattern-grid absolute inset-0 opacity-40" aria-hidden />
-                <blockquote className="relative">
+              <div className="relative overflow-hidden rounded-3xl bg-neutral-950 p-8 sm:p-10">
+                <Image
+                  src="/images/community-support.jpg"
+                  alt="A volunteer serving a meal during a community food program"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50" aria-hidden />
+                <blockquote className="relative z-10">
                   <p className="font-serif text-2xl font-medium leading-snug text-white sm:text-3xl">
                     “No one has ever become poor by giving.”
                   </p>
@@ -158,16 +206,16 @@ export default async function HomePage() {
                     </span>
                   </footer>
                 </blockquote>
-                <div className="relative mt-10 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-white/5 p-5">
-                    <Target className="h-5 w-5 text-gold-300" />
-                    <h3 className="mt-3 text-sm font-semibold uppercase tracking-wider text-white">Our Mission</h3>
-                    <p className="mt-2 text-sm text-white/65">Relieve suffering today, while building self-reliance for tomorrow.</p>
+                <div className="relative z-10 mt-10 grid grid-cols-2 gap-4">
+                  <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm backdrop-blur-sm">
+                    <Target className="h-5 w-5 text-forest-700" />
+                    <h3 className="mt-3 text-sm font-semibold uppercase tracking-wider text-forest-800">Our Mission</h3>
+                    <p className="mt-2 text-sm text-charcoal/80">Relieve suffering today, while building self-reliance for tomorrow.</p>
                   </div>
-                  <div className="rounded-2xl bg-white/5 p-5">
-                    <Sparkles className="h-5 w-5 text-gold-300" />
-                    <h3 className="mt-3 text-sm font-semibold uppercase tracking-wider text-white">Our Vision</h3>
-                    <p className="mt-2 text-sm text-white/65">A Pakistan where no one is left behind by hardship alone.</p>
+                  <div className="rounded-2xl border border-white/60 bg-white/80 p-5 shadow-sm backdrop-blur-sm">
+                    <Sparkles className="h-5 w-5 text-forest-700" />
+                    <h3 className="mt-3 text-sm font-semibold uppercase tracking-wider text-forest-800">Our Vision</h3>
+                    <p className="mt-2 text-sm text-charcoal/80">A Pakistan where no one is left behind by hardship alone.</p>
                   </div>
                 </div>
               </div>
@@ -183,7 +231,7 @@ export default async function HomePage() {
             <Reveal delay={100}>
               <p className="mt-5 leading-relaxed text-charcoal/70">
                 Upper Hands Foundation is a charitable and humanitarian welfare organization based in Pakistan.
-                We exist to stand beside individuals and families in their hardest moments — with food for the
+                We exist to stand beside individuals and families in their hardest moments, with food for the
                 hungry, care for the sick, learning for children, and hope for communities working toward a
                 better future.
               </p>
@@ -223,18 +271,40 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Our Core Programs"
             title="Where Your Kindness Works"
-            description="Each program addresses a fundamental need — chosen carefully, delivered with dignity, and measured by changed lives."
+            description="Each program addresses a fundamental need, chosen carefully, delivered with dignity and measured by changed lives."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {programs.map((p, i) => (
-              <ProgramCard key={p.slug} program={p} index={i} />
-            ))}
+            {programs.length > 0
+              ? programs.map((p, i) => <ProgramCard key={p.slug} program={p} index={i} />)
+              : programPhotoFallbacks.map((item, i) => {
+                  const image = programImages[item.icon];
+                  return (
+                    <Reveal key={item.icon} delay={(i % 4) * 80}>
+                      <figure className="group relative h-52 overflow-hidden rounded-2xl shadow-sm">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" aria-hidden />
+                        <figcaption className="absolute inset-x-4 bottom-4 font-medium text-white">
+                          {item.title}
+                        </figcaption>
+                      </figure>
+                    </Reveal>
+                  );
+                })}
           </div>
           {programs.length === 0 && (
             <p className="mt-10 text-center text-sm text-charcoal/55">
               Program details will be published here once confirmed by the foundation.
             </p>
           )}
+          <p className="mt-6 text-center text-xs text-charcoal/50">
+            Illustrative stock photos; they do not depict verified Upper Hands Foundation activities.
+          </p>
         </div>
       </section>
 
@@ -364,7 +434,7 @@ export default async function HomePage() {
           <SectionHeading
             eyebrow="Get Involved"
             title="Be the Hand That Helps"
-            description="There are many ways to be part of this mission — with your time, your skills, your resources, or your voice."
+            description="There are many ways to be part of this mission with your time, skills, resources or voice."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
@@ -509,42 +579,40 @@ export default async function HomePage() {
       )}
 
       {/* ============ B. DONATION BANNER + K. NEWSLETTER ============ */}
-      <section className="relative overflow-hidden bg-forest-900 py-16 sm:py-20">
-        <div className="absolute inset-0 pattern-grid opacity-40" aria-hidden />
-        <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-gold-400/10 blur-3xl" aria-hidden />
+      <section className="relative overflow-hidden bg-transparent py-16 sm:py-20">
         <div className="container-wide relative grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <span className="eyebrow !text-gold-300 before:bg-gold-300">Newsletter</span>
-            <h2 className="mt-3 text-3xl font-semibold text-balance text-white sm:text-4xl">
+            <span className="eyebrow">Newsletter</span>
+            <h2 className="mt-3 text-3xl font-semibold text-balance text-forest-800 sm:text-4xl">
               Stay Close to the Mission
             </h2>
-            <p className="mt-4 max-w-md leading-relaxed text-white/70">
-              Get updates on our work, field reports and upcoming campaigns — straight to your inbox.
+            <p className="mt-4 max-w-md leading-relaxed text-charcoal/70">
+              Get updates on our work, field reports and upcoming campaigns, delivered straight to your inbox.
             </p>
             <div className="mt-8 max-w-md">
               <NewsletterForm />
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <span className="eyebrow !text-gold-300 before:bg-gold-300">Zakat & Sadqah</span>
-              <h3 className="mt-3 font-serif text-2xl font-semibold text-white">
+            <div className="newsletter-feature-card rounded-3xl p-8">
+              <span className="eyebrow">Zakat & Sadqah</span>
+              <h3 className="mt-3 font-serif text-2xl font-semibold text-forest-800">
                 Your Zakat, Delivered With Dignity
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/70">
+              <p className="mt-3 text-sm leading-relaxed text-charcoal/70">
                 Zakat and Sadqah contributions are allocated with strict care to eligible families and
                 documented usage. Choose “Zakat” or “Sadqah” in the donation form to direct your gift.
               </p>
-              <div className="mt-6 grid grid-cols-3 gap-3 text-center text-xs text-white/60">
-                <div className="rounded-xl bg-white/5 p-3">
+              <div className="mt-6 grid grid-cols-3 gap-3 text-center text-xs text-charcoal/70">
+                <div className="rounded-xl border border-border/60 bg-cream/70 p-3">
                   <BookOpen className="mx-auto h-4 w-4 text-gold-300" />
                   <p className="mt-1.5">Documented</p>
                 </div>
-                <div className="rounded-xl bg-white/5 p-3">
+                <div className="rounded-xl border border-border/60 bg-cream/70 p-3">
                   <ShieldCheck className="mx-auto h-4 w-4 text-gold-300" />
                   <p className="mt-1.5">Eligibility Checked</p>
                 </div>
-                <div className="rounded-xl bg-white/5 p-3">
+                <div className="rounded-xl border border-border/60 bg-cream/70 p-3">
                   <Heart className="mx-auto h-4 w-4 text-gold-300" />
                   <p className="mt-1.5">Dignity First</p>
                 </div>

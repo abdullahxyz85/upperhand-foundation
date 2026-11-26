@@ -112,7 +112,7 @@ export default async function TransparencyPage() {
 
       <CtaBanner
         title="Hold Us Accountable."
-        description="If you have questions about our operations or finances, contact us directly — we answer to every supporter."
+        description="If you have questions about our operations or finances, contact us directly. We answer to every supporter."
         href="/contact"
         ctaLabel="Ask a Question"
       />

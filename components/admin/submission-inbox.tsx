@@ -127,7 +127,7 @@ export function SubmissionInbox({ config }: { config: SubmissionConfig }) {
                               ? new Date(row[c.name]).toLocaleString()
                               : c.name === 'amount_pkr'
                                 ? `PKR ${Number(row[c.name]).toLocaleString()}`
-                                : row[c.name] || '—'}
+                                : row[c.name] || 'Not provided'}
                           </dd>
                         </div>
                       ))}

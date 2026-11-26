@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Our Impact',
   description:
-    'The measurable impact of Upper Hands Foundation — lives impacted, families supported, projects completed and communities reached across Pakistan.',
+    'The measurable impact of Upper Hands Foundation, including lives impacted, families supported, projects completed and communities reached across Pakistan.',
 };
 
 type Stat = { id: string; key: string; label: string; value: number; suffix: string };
@@ -61,7 +61,7 @@ export default async function ImpactPage() {
               <h2 className="text-2xl font-semibold text-forest-800">Verified Figures Coming Soon</h2>
               <p className="mt-3 text-sm leading-relaxed text-charcoal/65">
                 We will never estimate our own impact. As programs complete and are audited, verified
-                statistics will appear here — with the period they cover clearly stated.
+                statistics will appear here, with the period they cover clearly stated.
               </p>
             </div>
           )}
@@ -77,7 +77,7 @@ export default async function ImpactPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               { title: 'Verified Before Published', text: 'Statistics appear only after internal review and, where applicable, independent audit.' },
-              { title: 'People, Not Just Outputs', text: 'We track outcomes — families stabilized, children still in school — not only items distributed.' },
+              { title: 'People, Not Just Outputs', text: 'We track outcomes such as families stabilized and children still in school, not only items distributed.' },
               { title: 'Period Clearly Stated', text: 'Every figure states the time range and program it covers, so nothing is ambiguous.' },
             ].map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>

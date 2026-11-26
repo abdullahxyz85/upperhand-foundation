@@ -8,7 +8,7 @@ import { bankPlaceholders } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Donate to Upper Hands Foundation — support food assistance, education, healthcare, emergency relief, Zakat and Sadqah. Transparent, secure, dignity-first giving.',
+    'Donate to Upper Hands Foundation to support food assistance, education, healthcare, emergency relief, Zakat and Sadqah. Transparent, secure, dignity-first giving.',
 };
 
 const methods = [
@@ -76,7 +76,7 @@ export default function DonatePage() {
               <div className="mt-8 space-y-3 text-sm text-charcoal/65">
                 {[
                   'A transaction reference for every donation',
-                  'Cause-restricted giving — Zakat handled with eligibility care',
+                  'Cause-restricted giving: Zakat handled with eligibility care',
                   'Published utilization reports you can verify',
                 ].map((item) => (
                   <p key={item} className="flex items-start gap-2.5">

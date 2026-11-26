@@ -8,7 +8,7 @@ import { PartnershipForm } from '@/components/involvement-forms';
 export const metadata: Metadata = {
   title: 'Partnerships',
   description:
-    'Partner with Upper Hands Foundation — corporate CSR, in-kind support and joint humanitarian programs across Pakistan.',
+    'Partner with Upper Hands Foundation through corporate CSR, in-kind support and joint humanitarian programs across Pakistan.',
 };
 
 export default function PartnershipsPage() {

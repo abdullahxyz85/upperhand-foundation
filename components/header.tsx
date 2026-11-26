@@ -37,16 +37,16 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-[100] isolate w-full border-b border-border/70 transition-shadow duration-300 ${
         scrolled
-          ? 'bg-cream/95 shadow-md backdrop-blur-md'
-          : 'bg-cream/80 backdrop-blur-sm'
+          ? 'bg-cream shadow-md'
+          : 'bg-cream shadow-sm'
       }`}
     >
-      <div className="container-wide flex h-18 items-center justify-between gap-4 py-3">
+      <div className="container-wide flex min-h-[72px] items-center justify-between gap-4 py-3">
         <Logo />
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-0.5 lg:flex">
+        <nav aria-label="Main navigation" className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex">
           {navigation.map((item) => (
             <div
               key={item.label}
@@ -56,7 +56,7 @@ export function Header() {
             >
               <Link
                 href={item.href}
-                className={`flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                className={`flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-[13px] font-medium transition-colors ${
                   isActive(item.href)
                     ? 'text-forest-700'
                     : 'text-charcoal/75 hover:text-forest-700'
@@ -92,13 +92,13 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link href="/donate" className="btn-primary hidden !px-5 !py-2.5 text-sm sm:inline-flex">
+          <Link href="/donate" className="btn-primary hidden shrink-0 whitespace-nowrap !px-5 !py-2.5 text-sm sm:inline-flex">
             <Heart className="h-4 w-4" />
             Donate Now
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white text-charcoal lg:hidden"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-border bg-white text-charcoal xl:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
@@ -108,7 +108,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="fixed inset-0 top-[68px] z-40 overflow-y-auto border-t border-border bg-cream lg:hidden">
+        <div className="fixed inset-0 top-[72px] z-40 overflow-y-auto border-t border-border bg-cream xl:hidden">
           <nav aria-label="Mobile navigation" className="container-wide flex flex-col gap-1 py-6">
             {navigation.map((item) => (
               <div key={item.label} className="border-b border-border/60 pb-1">

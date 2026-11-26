@@ -28,7 +28,7 @@ export function InfoCard({
 export function PlaceholderNotice({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-2xl border border-dashed border-gold-400/60 bg-gold-100/30 px-5 py-4 text-sm text-charcoal/70">
-      <strong className="font-medium text-charcoal">Placeholder —</strong> {children}
+      <strong className="font-medium text-charcoal">Placeholder:</strong> {children}
     </div>
   );
 }

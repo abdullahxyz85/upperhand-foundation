@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from './reveal';
 
@@ -14,11 +15,21 @@ export function PageHero({
   breadcrumb?: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-forest-800 text-white">
+    <section className="relative overflow-hidden bg-neutral-950 text-white">
+      <Image
+        src="/images/community-outreach.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" aria-hidden />
       <div className="absolute inset-0 pattern-grid opacity-60" aria-hidden />
-      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-forest-600/30 blur-3xl" aria-hidden />
+      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-black/20 blur-3xl" aria-hidden />
       <div className="absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-gold-400/10 blur-3xl" aria-hidden />
-      <div className="container-wide relative py-16 sm:py-20 lg:py-24">
+      <div className="container-wide relative py-14 sm:py-18 lg:py-20">
         {breadcrumb && breadcrumb.length > 0 && (
           <Reveal>
             <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-white/60">
@@ -39,13 +50,13 @@ export function PageHero({
         )}
         <Reveal delay={60}>
           {eyebrow && (
-            <span className="eyebrow !text-gold-300 mb-4 before:bg-gold-300">{eyebrow}</span>
+            <span className="eyebrow !text-gold-300 mb-4">{eyebrow}</span>
           )}
-          <h1 className="max-w-3xl text-4xl font-semibold text-balance sm:text-5xl">{title}</h1>
+          <h1 className="max-w-3xl text-3xl font-semibold text-balance sm:text-4xl lg:text-5xl">{title}</h1>
         </Reveal>
         {description && (
           <Reveal delay={140}>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">{description}</p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">{description}</p>
           </Reveal>
         )}
       </div>
@@ -68,7 +79,7 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className={align === 'center' ? 'text-center' : ''}>
-      {eyebrow && <span className={`eyebrow ${dark ? '!text-gold-300 before:bg-gold-300' : ''}`}>{eyebrow}</span>}
+      {eyebrow && <span className={`eyebrow ${dark ? '!text-gold-300' : ''}`}>{eyebrow}</span>}
       <h2 className={`mt-3 text-3xl font-semibold text-balance sm:text-4xl ${dark ? 'text-white' : 'text-forest-800'}`}>
         {title}
       </h2>
@@ -93,7 +104,16 @@ export function CtaBanner({
   ctaLabel?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-forest-700">
+    <section className="relative overflow-hidden bg-neutral-950">
+      <Image
+        src="/images/community-support.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-black/55" aria-hidden />
       <div className="absolute inset-0 pattern-dots opacity-40" aria-hidden />
       <div className="container-wide relative flex flex-col items-center gap-8 py-16 text-center sm:py-20 lg:flex-row lg:justify-between lg:text-left">
         <Reveal>

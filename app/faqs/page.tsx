@@ -68,7 +68,7 @@ export default async function FaqsPage() {
 
       <CtaBanner
         title="Still Have a Question?"
-        description="Our team is happy to help — reach out and we'll respond as soon as we can."
+        description="Our team is happy to help. Reach out and we'll respond as soon as we can."
         href="/contact"
         ctaLabel="Contact Us"
       />

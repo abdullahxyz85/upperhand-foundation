@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Projects & Campaigns',
   description:
-    'Current and past fundraising projects and campaigns by Upper Hands Foundation — follow progress and support the cause that moves you.',
+    'Current and past fundraising projects and campaigns by Upper Hands Foundation. Follow progress and support the cause that moves you.',
 };
 
 type Project = {
@@ -86,7 +86,7 @@ export default async function ProjectsPage() {
       <PageHero
         eyebrow="Projects & Campaigns"
         title="Campaigns You Can Stand Behind"
-        description="Every campaign shows its goal, its progress and its outcome — so you always know what your support achieved."
+        description="Every campaign shows its goal, progress and outcome so you know what your support achieved."
         breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Projects & Campaigns' }]}
       />
 

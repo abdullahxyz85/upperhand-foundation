@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {
   title: 'Leadership Team',
   description:
-    'Meet the leadership team guiding Upper Hands Foundation — the people accountable for our mission, our donors and our communities.',
+    'Meet the leadership team guiding Upper Hands Foundation, accountable for our mission, our donors and our communities.',
 };
 
 type Member = { id: string; name: string; role: string; bio: string; photo_url: string };

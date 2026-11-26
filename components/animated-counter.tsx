@@ -43,7 +43,7 @@ export function AnimatedCounter({
     return (
       <span ref={ref} className={className}>
         <span className="inline-flex items-center rounded-full border border-dashed border-gold-400/70 bg-gold-100/40 px-3 py-0.5 font-sans text-xs font-medium tracking-wide text-charcoal/70">
-          Placeholder — pending verified figures
+          Placeholder: pending verified figures
         </span>
       </span>
     );

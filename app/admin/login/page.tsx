@@ -96,7 +96,7 @@ export default function AdminLoginPage() {
           </form>
         </div>
         <p className="mt-6 text-center text-xs text-white/50">
-          Authorized administrators only. All access is logged. — <Link href="/" className="underline hover:text-gold-300">Back to website</Link>
+          Authorized administrators only. All access is logged. <Link href="/" className="underline hover:text-gold-300">Back to website</Link>
         </p>
       </div>
     </section>

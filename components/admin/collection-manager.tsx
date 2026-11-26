@@ -170,7 +170,7 @@ export function CollectionManager({ config }: { config: CollectionConfig }) {
                         ? row[f]
                           ? 'Yes'
                           : 'No'
-                        : String(row[f] ?? '—')}
+                        : String(row[f] ?? 'Not provided')}
                     </td>
                   ))}
                   <td className="whitespace-nowrap px-4 py-3 text-right">
@@ -209,7 +209,7 @@ export function CollectionManager({ config }: { config: CollectionConfig }) {
           <div className="my-8 w-full max-w-2xl rounded-3xl bg-white p-8 shadow-2xl">
             <div className="flex items-center justify-between">
               <h2 className="font-serif text-xl font-semibold text-forest-800">
-                {editing.id ? 'Edit' : 'New'} — {config.label}
+                {editing.id ? 'Edit' : 'New'}: {config.label}
               </h2>
               <button onClick={() => setEditing(null)} className="rounded-lg p-2 hover:bg-muted" aria-label="Close">
                 <X className="h-5 w-5" />
